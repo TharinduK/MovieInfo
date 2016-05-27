@@ -1,0 +1,61 @@
+﻿/* Style sheet for narrower screens */
+@media screen and (max-width:780px) {
+    #wrapper {
+        /* Set your own widths, % for fluid, px for fixed */
+        width: 100%;
+        min-width: 320px;
+        max-width: 780px;
+        /* Vertical margins, and auto to center */
+        margin: 0 auto;
+    }
+    /* Sample styles for 3-column layout */
+    /* Section containing multiple columns */
+    .columns {
+        display: block;
+        width: 100%;
+        /* Border is optional, style to taste */
+        border: solid 1px silver;
+    }
+        /* Aside columns in columns div */
+        .columns aside {
+            display: block;
+            /* Use any width and padding you like */
+            width: 100%;
+            padding: 1%;
+        }
+        /* Main article in the columns */
+        .columns article {
+            padding: 1%;
+        }
+        /*Optional, style to taste */
+        .columns .left {
+            background-color: #ddd;
+            border-right: solid 1px gray;
+        }
+
+        .columns .right {
+            background-color: #ddd;
+            border-left: solid 1px gray;
+        }
+}
+/* Frame for picture that looks like a photo snapshot */
+figure.snapshot {
+    padding: 4%;
+    background: white;
+    border-radius: 0;
+    margin: 10px auto;
+    width: 60%;
+    border: solid 1px gray;
+    box-shadow: 3px 3px 3px 3px silver;
+}
+    /* Picture inside photo snapshot */
+    figure.snapshot img {
+        width: 100%;
+        display: block;
+        border-radius: 0;
+    }
+    /* Caption for photo snapshot */
+    figure.snapshot figcaption {
+        padding: none;
+        font: 12pt/14pt Lucida Handwriting, Lucida Calligraphy, Comic Sans MS, Cursive;
+    }

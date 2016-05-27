@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- Describe this page for search engines -->
+    <meta name="description"
+          content="YOUR DESCRIPTION HERE(search will probably only show 160 char)">
+    <!-- Character set for English and similar languages -->
+    <meta charset="utf-8">
+    <!-- Helps with rendering on mobile devices -->
+    <meta name="viewport"
+          content="width=device-width;initial-scale=1.0">
+    <!-- TK - for site to look like an app -->
+    <!-- Apple -->
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black">
+    <!-- android -->
+    <meta name="mobile-web-app-capable"
+          content="yes">
+    <!-- End of TK stuff -->
+    <!-- Link to external style sheet -->
+    <link href="styleScreen.css" rel="stylesheet" media="screen">
+    <link href="stylesheet2.css" rel="stylesheet" media="screen and (max-width: 779px)">
+    <link href="stylesheet3.css" rel="stylesheet" media="print">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+
+        /* Search Dispaly */
+        div.search .searchText {
+            display: none;
+            width: 200px;
+
+        }
+
+        div.search:hover .searchText {
+                        -moz-transition: all ease-out 5s;
+            -ms-transition: all ease-out 5s;
+            -o-transition: all ease-out 5s;
+            -webkit-transition: all ease-out 5s;
+            transition: all ease-out 5s;
+            transition: all ease-out 5s;
+
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //Make older browsers aware of new HTML5 layout tags
+        'header nav aside article footer section figure figcaption'.replace(/\w+/g, function (n) { document.createElement(n) })
+    </script>
+    <!-- Constrain width of layout (optional) -->
+    <div id="wrapper">
+        <!-- Header is logo, title, or other info at top of each page -->
+        <header>
+            Header content here
+            <div id="searchbox" class="search">
+                <input type="search" id="searchText" class="searchText" placeholder="Enter your search term..." results="5" autosave="5" autocomplete="on" />
+                <img src="Images/web-search-24.jpg" alt="Site Search" onclick="search()" />
+            </div>
+        </header>
+        <!-- If site contains multiple pages, nav includes links to other pages -->
+        <nav>
+            Nav links here
+        </nav>
+        <!-- Code for a three-column layout under nav bar -->
+        <div class="columns">
+            <aside class="left">
+                Left column
+            </aside>
+            <!-- Article is the main content of the page -->
+            <article>
+
+                @RenderBody()
+            </article>
+            <aside class="right">
+                Right column
+            </aside>
+        </div><!-- End columns -->
+        <!-- Footer at bottom of page (optional) -->
+        <footer>
+            Footer content here
+        </footer>
+    </div><!-- End wrapper (nothing below this except /body and /html) -->
+</body>
+</html>

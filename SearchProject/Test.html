@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TK - Search Project</title>
+    <!-- Describe this page for search engines -->
+    <meta name="description"
+          content="YOUR DESCRIPTION HERE(search will probably only show 160 char)">
+    <!-- Character set for English and similar languages -->
+    <meta charset="utf-8">
+    <!-- Helps with rendering on mobile devices -->
+    <meta name="viewport"
+          content="width=device-width;initial-scale=1.0">
+    <!-- TK - for site to look like an app -->
+    <!-- Apple -->
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black">
+    <!-- android -->
+    <meta name="mobile-web-app-capable"
+          content="yes">
+    <!-- End of TK stuff -->
+    <!-- Link to external style sheet -->
+    <link href="stylesheet1.css" rel="stylesheet" media="screen">
+    <link href="stylesheet2.css" rel="stylesheet" media="screen and (max-width: 779px)">
+    <link href="stylesheet3.css" rel="stylesheet" media="print">
+    <!-- Must embed moved stop a separate stylesheet -->
+    <style>
+        * {
+            /*TK: I would like to expliceity specify these
+                    margin: 0;
+                   padding: 0;*/
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        /* HTML5 Template Styles for HTML5Template page */
+        /* Make HTML5 layout elements block elements for older browsers */
+        header, nav, aside, article, footer, section, figure, figcaption {
+            display: block;
+        }
+        /* Get rid of white border around browser window */
+        body {
+            /*Margins, padding, borders, height, and width are not inherited preperties*/
+            margin: 0;
+            padding: 0;
+        }
+        /* Get rid of large margins on headings */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        #wrapper {
+            /* Set your own widths, % for fluid, px for fixed */
+            width: 100%;
+            min-width: 780px;
+            max-width: 1260px;
+            /* Center the layout */
+            margin: 0 auto;
+        }
+        /* Section containing multiple columns */
+        .columns {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            /* border is optional, style to taste */
+            border: solid 1px silver;
+        }
+            /* Aside columns in columns div */
+            .columns aside {
+                display: table-cell;
+                /* Use any width and padding you like */
+                width: 18%;
+                padding: 1%;
+            }
+            /* Main article in the columns */
+            .columns article {
+                padding: 1%;
+            }
+            /*Optional, style to taste */
+            .columns .left {
+                background-color: #ddd;
+                border-right: solid 1px gray;
+            }
+
+            .columns .right {
+                background-color: #ddd;
+                border-left: solid 1px gray;
+            }
+        /* Style rules for formal, captioned figures */
+        figure {
+            width: 80%;
+            max-width: 600px;
+            clear: both;
+            margin: 1em auto;
+            border: solid 1px gray;
+            border-radius: 4px;
+            box-shadow: 3px 3px 3px 3px silver;
+        }
+
+            figure img {
+                width: 100%;
+                display: block;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+
+        figcaption {
+            font: 10pt/10pt Verdana, Tahoma, Sans-serif;
+            padding: 2px 4px;
+        }
+        /* Styles for the printer-friendly version of the page */
+        @media print {
+
+            /* Remove background colors and images, use black ink */
+            * {
+                background: transparent !important;
+                color: black !important;
+            }
+
+            body {
+                width: auto !important;
+                font-size: 12pt;
+            }
+            /* Size to fit width of the printed page */
+            #wrapper {
+                width: 98%;
+                margin: 1em auto;
+                max-width: none;
+                min-width: none;
+            }
+            /* Don't display the navigation bar */
+            /* You can use the same idea to hide anything else
+        that you don't want on the printed page */
+            nav {
+                display: none;
+            }
+            /* Make links black and underlined */
+            a, a:link, a:visited {
+                color: black;
+                text-decoration: none;
+            }
+                /* Show URL afer link (only good for external links) */
+                a[href]:after {
+                    content: " (" attr(href) ")";
+                }
+            /* Limit width of images to their containing elements */
+            img {
+                max-width: 100% !important;
+            }
+        }
+
+        /* Style sheet for narrower screens */
+        @media screen and (max-width:780px) {
+            #wrapper {
+                /* Set your own widths, % for fluid, px for fixed */
+                width: 100%;
+                min-width: 320px;
+                max-width: 780px;
+                /* Vertical margins, and auto to center */
+                margin: 0 auto;
+            }
+            /* Sample styles for 3-column layout */
+            /* Section containing multiple columns */
+            .columns {
+                display: block;
+                width: 100%;
+                /* Border is optional, style to taste */
+                border: solid 1px silver;
+            }
+                /* Aside columns in columns div */
+                .columns aside {
+                    display: block;
+                    /* Use any width and padding you like */
+                    width: 100%;
+                    padding: 1%;
+                }
+                /* Main article in the columns */
+                .columns article {
+                    padding: 1%;
+                }
+                /*Optional, style to taste */
+                .columns .left {
+                    background-color: #ddd;
+                    border-right: solid 1px gray;
+                }
+
+                .columns .right {
+                    background-color: #ddd;
+                    border-left: solid 1px gray;
+                }
+        }
+        /* Frame for picture that looks like a photo snapshot */
+        figure.snapshot {
+            padding: 4%;
+            background: white;
+            border-radius: 0;
+            margin: 10px auto;
+            width: 60%;
+            border: solid 1px gray;
+            box-shadow: 3px 3px 3px 3px silver;
+        }
+            /* Picture inside photo snapshot */
+            figure.snapshot img {
+                width: 100%;
+                display: block;
+                border-radius: 0;
+            }
+            /* Caption for photo snapshot */
+            figure.snapshot figcaption {
+                padding: none;
+                font: 12pt/14pt Lucida Handwriting, Lucida Calligraphy, Comic Sans MS, Cursive;
+            }
+
+        /* Search Dispaly */
+        div.search .searchText {
+            display: none;
+            width: 200px;
+
+        }
+
+        div.search:hover .searchText {
+                        -moz-transition: all ease-out 5s;
+            -ms-transition: all ease-out 5s;
+            -o-transition: all ease-out 5s;
+            -webkit-transition: all ease-out 5s;
+            transition: all ease-out 5s;
+            transition: all ease-out 5s;
+
+            display: block;
+        }
+    </style>
+    <!-- Load jQuery 1.9.1 minified from Google CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
+    <script>
+        $(document).ready(function () {
+            // jQuery code to execute after page load
+        });
+
+        function search() {
+            alert("Search now");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //Make older browsers aware of new HTML5 layout tags
+        'header nav aside article footer section figure figcaption'.replace(/\w+/g, function (n) { document.createElement(n) })
+    </script>
+    <!-- Constrain width of layout (optional) -->
+    <div id="wrapper">
+        <!-- Header is logo, title, or other info at top of each page -->
+        <header>
+            Header content here
+            <div id="searchbox" class="search">
+                <input type="search" id="searchText" class="searchText" placeholder="Enter your search term..." results="5" autosave="5" autocomplete="on" />
+                <img src="Images/web-search-24.jpg" alt="Site Search" onclick="search()" />
+            </div>
+        </header>
+        <!-- If site contains multiple pages, nav includes links to other pages -->
+        <nav>
+            Nav links here
+        </nav>
+        <!-- Code for a three-column layout under nav bar -->
+        <div class="columns">
+            <aside class="left">
+                Left column
+            </aside>
+            <!-- Article is the main content of the page -->
+            <article>
+                Main content column
+                <figure>
+                    <img src="sample.png" alt="..." />
+                    <figcaption>Sample figure caption</figcaption>
+                </figure>
+            </article>
+            <aside class="right">
+                Right column
+            </aside>
+        </div><!-- End columns -->
+        <!-- Footer at bottom of page (optional) -->
+        <footer>
+            Footer content here
+        </footer>
+    </div><!-- End wrapper (nothing below this except /body and /html) -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model MovieInfo.Web.Models.MoviesViewModel
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@*<form method="get">
+        <input type="search" name="search" autofocus />
+        <input type="submit" value="Search"  />
+    </form>*@
+@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "movieList"
+    }))
+{
+    <input type="search" name="search" autofocus />
+    <input type="submit" value="Search" />
+}
+<div id="movieList">
+    <table class="table">
+        <tr>
+            <th>Movie Name</th>
+            <th>Description</th>
+            <th>Year</th>
+            <th>Genre</th>
+        </tr>
+
+        @foreach (var item in Model.Movies)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+            </tr>
+        }
+    </table>
+    Page @(Model.PagingInfo.CurrentPageNumber) of @(Model.PagingInfo.TotalPageCount)
+    @Html.PagedListPager(Model.Movies, page => Url.Action("index", new { page }))
+</div>
